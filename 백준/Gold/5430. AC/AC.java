@@ -33,7 +33,7 @@ public class Main {
                 }
             }
 
-            //
+            // Main Function : Move firstIndex , lastIndex
             firstIndex = 0;
             lastIndex = nums.length;
             for (int i = 0; i < orders.length; i++) {
@@ -82,7 +82,7 @@ public class Main {
             }
         }
     }
-
+    // Check if current Array is reversed and move Index
     static void delete(int[] nums){
         if(check){
             firstIndex+=1;
@@ -95,9 +95,12 @@ public class Main {
             end = true;
         }
     }
+    // Reverse Check
     static void reverse(){
         check = check ? false : true;
     }
+    // If lastIndex is smaller than firstIndex, its error
+    // 여기 부분이 빈 배열이 출력될 수 있도록 해야 하는 부분 때문에 조건이 까다로웠음
     static boolean indexCheck(int[] nums){
         if(firstIndex<=lastIndex){
             return true;
