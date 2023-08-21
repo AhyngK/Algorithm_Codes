@@ -6,6 +6,13 @@ public class Main {
     static int sharkSize = 2;
     static int fishNum = 0;
     static int time = 0;
+
+    // IDEA
+    // 현재 상어의 좌표를 바탕으로 가장 가까우면서 먹을 수 있는 물고기의 좌표를 BFS 탐색을 통해 구한다
+    // 해당 좌표가 여러개일 수 있기 때문에 List를 통해 같은 거리에 있는 좌표는 저장한다
+    // 같은 거리의 여러 좌표가 있는 경우, 맨 위-맨 왼쪽의 좌표 선택을 위해 Comparator Override를 통해 리스트를 정렬, 맨 앞 좌표 구한다
+    // 구한 좌표와 시간을 반환하고 시간 및 상어 위치를 바꿔 다음 반복을 실행한다.
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -20,6 +27,7 @@ public class Main {
         moveShark(shark,map);
         System.out.println(time);
     }
+
     static void moveShark(int[] shark, int[][] map){
         while (true){
             map[shark[0]][shark[1]] = 0;
