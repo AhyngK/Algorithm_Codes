@@ -39,13 +39,12 @@ public class Main {
             if(count > ENDLIMIT){
                 break label;
             }
-
             Queue<int[][]> tempQue = new LinkedList<>();
             while (!que.isEmpty()){
                 int[][] temp = que.poll();
 
                 for (int i = 0; i < directions.length; i++) {
-                    int[][] next = {{temp[0][0]+directions[i][0], temp[0][1]+directions[i][1], temp[0][0],temp[0][1]},{temp[1][0]+directions[i][0], temp[1][1]+directions[i][1], temp[0][0],temp[0][1]}};
+                    int[][] next = {{temp[0][0]+directions[i][0], temp[0][1]+directions[i][1], temp[0][0],temp[0][1]},{temp[1][0]+directions[i][0], temp[1][1]+directions[i][1], temp[1][0],temp[1][1]}};
                     if(borderCheck(next[0]) && borderCheck(next[1])){
                         if(board[next[0][0]][next[0][1]].equals("#") && board[next[1][0]][next[1][1]].equals("#")){
                             continue;
