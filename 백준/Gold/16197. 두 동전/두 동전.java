@@ -50,9 +50,11 @@ public class Main {
                         if(board[next[0][0]][next[0][1]].equals("#") && board[next[1][0]][next[1][1]].equals("#")){
                             continue;
                         }
-                        if(next[0][0]==temp[0][0] && next[0][1]==temp[0][1] && next[1][0]==temp[1][0] && next[1][1]==temp[1][1]){
+                        if(next[0][0]==temp[0][2] && next[0][1]==temp[0][3] && next[1][0]==temp[1][2] && next[1][1]==temp[1][3]){
                             continue;
                         }
+                        // 방향을 저장해 반복 이동을 막아두면, 아래와 같이 하나의 동전만 벽을 만난 경우는 아예 달라지게 된다.
+                        // 이 때문에 오답을 출력했음. 이전 좌표 자체를 저장해둔 뒤 둘 다 같은 좌표일 경우에만 이동하지 않는 것으로 변경하니 통과
                         if (board[next[0][0]][next[0][1]].equals("#")) {
                             next[0][0] = temp[0][0];
                             next[0][1] = temp[0][1];
